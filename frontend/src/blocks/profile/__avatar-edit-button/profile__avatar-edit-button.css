@@ -1,0 +1,13 @@
+.profile__avatar-edit-button {
+  background: none;
+  appearance: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* overlay */
+.profile__avatar-edit-button:hover *:first-child {
+  display: block;
+}

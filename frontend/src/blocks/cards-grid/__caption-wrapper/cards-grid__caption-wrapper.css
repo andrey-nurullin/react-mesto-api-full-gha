@@ -1,0 +1,9 @@
+.cards-grid__caption-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 0 20px 0 21px;
+  height: 80px;
+}

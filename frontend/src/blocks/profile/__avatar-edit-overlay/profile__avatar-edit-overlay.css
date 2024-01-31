@@ -1,0 +1,11 @@
+.profile__avatar-edit-overlay {
+  background: #000 no-repeat center / 26px url('../../../images/icon-edit.svg');
+  opacity: .8;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: none;
+}

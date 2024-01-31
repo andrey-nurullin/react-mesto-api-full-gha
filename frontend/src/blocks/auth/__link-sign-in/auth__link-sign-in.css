@@ -1,0 +1,10 @@
+.auth__link-sign-in {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.auth__link-sign-in:hover {
+  text-decoration: underline;
+}

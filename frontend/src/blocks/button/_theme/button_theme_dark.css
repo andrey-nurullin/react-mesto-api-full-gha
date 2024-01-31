@@ -1,0 +1,9 @@
+.button_theme_dark {
+  background-color: #fff;
+  color: #000;
+}
+
+.button_theme_dark:hover {
+  opacity: .85;
+}
+

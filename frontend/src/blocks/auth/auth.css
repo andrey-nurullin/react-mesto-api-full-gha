@@ -1,0 +1,27 @@
+.auth {
+  max-width: 358px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 60px;
+}
+
+.auth .button {
+  margin: 188px 0 15px;
+}
+
+.auth .heading {
+  margin: 0;
+}
+
+@media (max-width: 550px) {
+  .auth {
+    padding: 40px 30px 40px;
+    max-width: 260px;
+  }
+
+  .auth .button {
+    margin: 173px 0 20px;
+  }
+}

@@ -1,0 +1,11 @@
+.img-with-caption__caption {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: -24.5px;
+  left: 0;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14.5px;
+  color: #fff;
+}

@@ -1,0 +1,8 @@
+.hover-on-react {
+  transition: opacity .4s;
+}
+
+.hover-on-react:hover {
+  opacity: .6;
+  cursor: pointer;
+}

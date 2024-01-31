@@ -1,0 +1,21 @@
+.popup_type_tooltip .popup__container {
+  text-align: center;
+  padding: 60px 36px;
+}
+
+.popup_type_tooltip .heading {
+  margin: 32px 0 0;
+}
+
+@media (max-width: 550px) {
+  .popup_type_tooltip .popup__container {
+    width: 282px;
+    padding: 50px 18px;
+  }
+
+  .popup_type_tooltip .heading {
+    margin: 40px 0 0;
+    font-size: 20px;
+    line-height: 24px;
+  }
+}

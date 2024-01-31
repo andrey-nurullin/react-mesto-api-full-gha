@@ -1,0 +1,7 @@
+.user-bar__link_logged {
+  color: #a9a9a9;
+}
+
+.user-bar__link_logged:hover {
+  color: #fff;
+}
