@@ -4,7 +4,7 @@ const {
 } = require('../utils/utils');
 
 module.exports.getCards = (req, res, next) => Card.find({})
-  .populate('likes')
+  .populate('likes').populate('owner')
   .then((cards) => res.send(cards))
   .catch(next);
 
@@ -37,7 +37,7 @@ module.exports.likeCard = (req, res, next) => Card.findByIdAndUpdate(
   { new: true },
 )
   .orFail(() => new NotFoundError())
-  .populate('likes')
+  .populate('likes').populate('owner')
   .then((card) => res.send(card))
   .catch(next);
 
@@ -47,6 +47,6 @@ module.exports.dislikeCard = (req, res, next) => Card.findByIdAndUpdate(
   { new: true },
 )
   .orFail(() => new NotFoundError())
-  .populate('likes')
+  .populate('likes').populate('owner')
   .then((card) => res.send(card))
   .catch(next);
