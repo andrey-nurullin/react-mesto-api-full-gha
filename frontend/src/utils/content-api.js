@@ -1,11 +1,6 @@
-import { apiConfig } from "./utils";
+import { BASE_URL, apiConfig } from "./utils";
 
 class ContentApi {
-
-  constructor({baseUrl, headers}) {
-    this._baseUrl = baseUrl;
-    this._headers = headers;
-  }
 
   getUserInfo() {
     return this._doRequest('/users/me');
@@ -43,9 +38,12 @@ class ContentApi {
    * @returns {Promise}
    */
   _doRequest(dataUrl, method, data) {
-    return fetch(this._baseUrl + dataUrl, {
+    return fetch(BASE_URL + dataUrl, {
       method: method,
-      headers: this._headers,
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('auth_token')}`,
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify(data)
     }).then((response) => {
       if (response.ok) {
@@ -56,6 +54,6 @@ class ContentApi {
   }
 }
 
-const contentApi = new ContentApi(apiConfig);
+const contentApi = new ContentApi();
 
 export default contentApi;

@@ -178,8 +178,8 @@ function App() {
   }
 
   const handleLoginSuccess = (response, email) => {
-    if (!response.token) throw new Error('Отсутствует токен');
-    localStorage.setItem('auth_token', response.token);
+    if (!response.authToken) throw new Error('Отсутствует токен');
+    localStorage.setItem('auth_token', response.authToken);
     setUserAsLogged(email);
   }
 

@@ -6,11 +6,13 @@ const helmet = require('helmet');
 const { errors } = require('celebrate');
 const router = require('./routes');
 const errorHandler = require('./middlewares/errorHandler');
+const corsHandler = require('./middlewares/corsHandler');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const app = express();
 const { PORT = 3000 } = process.env;
 
+app.use(corsHandler);
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

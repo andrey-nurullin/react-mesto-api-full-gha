@@ -1,7 +1,8 @@
 // eslint-disable-next-line max-classes-per-file
 const jwt = require('jsonwebtoken');
 
-const SECRET_KEY = 'dev_secret';
+const { NODE_ENV, JWT_SECRET } = process.env;
+const SECRET_KEY = (NODE_ENV === 'production') ? JWT_SECRET : 'dev_secret';
 
 const URL_PATTERN = /^(https?):\/\/[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]/;
 

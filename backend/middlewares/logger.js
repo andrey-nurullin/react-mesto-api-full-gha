@@ -1,10 +1,8 @@
-// middlewares/logger.js
-
 const winston = require('winston');
 const expressWinston = require('express-winston');
 const path = require('path');
 
-const logsDir = path.join(process.cwd(), 'logs')
+const logsDir = path.join(process.cwd(), 'logs');
 
 const requestLogger = expressWinston.logger({
   transports: [
