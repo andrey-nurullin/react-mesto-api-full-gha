@@ -172,7 +172,7 @@ function App() {
   const handleAuthorization = (authToken) => {
     authApi.getUserData(authToken)
       .then((userData) => {
-        setUserAsLogged(userData.data.email);
+        setUserAsLogged(userData.email);
       })
       .catch(console.error);
   }

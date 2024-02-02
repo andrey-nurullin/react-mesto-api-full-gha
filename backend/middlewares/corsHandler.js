@@ -1,6 +1,7 @@
 const DEFAULT_ALLOWED_METHODS = "GET,HEAD,PUT,PATCH,POST,DELETE";
 const allowedOrigins = [
-  'localhost:3000',
+  'http://localhost:3000',
+  'http://localhost:3001',
   'http://mymesto.local',
   'https://mymesto.local',
   'http://mymesto.nomoredomainsmonster.ru',
