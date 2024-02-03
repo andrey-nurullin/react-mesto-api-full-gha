@@ -10,4 +10,4 @@ class ConflictError extends Error {
   }
 }
 
-module.exports = { DATA_DUPLICATE_ERROR, ConflictError }
+module.exports = { DATA_DUPLICATE_ERROR, ConflictError };

@@ -6,4 +6,4 @@ module.exports = class AuthError extends Error {
     this.name = 'AuthError';
     this.statusCode = httpStatus.UNAUTHORIZED;
   }
-}
+};
