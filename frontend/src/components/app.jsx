@@ -225,7 +225,7 @@ function App() {
     Promise.all([contentApi.getUserInfo(), contentApi.getInitialCards()])
     .then(([userInfo, cards]) => {
       setCurrentUser(userInfo);
-      setCards(cards);
+      setCards(cards.reverse());
     })
     .catch(console.error);
   }, [isLogged])
