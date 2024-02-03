@@ -70,8 +70,9 @@ function App() {
   }
 
   const handleUpdateUser = (userInfo) => {
+    const { name, about } = userInfo;
     function makeRequest() {
-      return contentApi.setUserInfo(userInfo).then(setCurrentUser)
+      return contentApi.setUserInfo({ name, about }).then(setCurrentUser)
     }
     handleSubmit(makeRequest);
   }
