@@ -1,4 +1,4 @@
-const { httpStatus } = require("./utils");
+const { httpStatus } = require('./utils');
 
 module.exports = class AuthError extends Error {
   constructor(message = 'Ошибка авторизации') {

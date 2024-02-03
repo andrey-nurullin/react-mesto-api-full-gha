@@ -1,4 +1,4 @@
-const { httpStatus } = require("./utils");
+const { httpStatus } = require('./utils');
 
 module.exports = class BadRequestError extends Error {
   constructor(message = 'Некорректные данные') {

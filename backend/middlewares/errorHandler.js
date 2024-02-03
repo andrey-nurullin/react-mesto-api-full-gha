@@ -1,7 +1,7 @@
 const { httpStatus } = require('../utils/utils');
 
 module.exports = (err, req, res, next) => {
-  let {
+  const {
     statusCode = httpStatus.INTERNAL_SERVER_ERROR,
     message = 'Ошибка сервера',
   } = err;

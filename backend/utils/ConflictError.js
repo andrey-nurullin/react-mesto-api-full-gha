@@ -1,4 +1,4 @@
-const { httpStatus } = require("./utils");
+const { httpStatus } = require('./utils');
 
 const DATA_DUPLICATE_ERROR = 11000;
 

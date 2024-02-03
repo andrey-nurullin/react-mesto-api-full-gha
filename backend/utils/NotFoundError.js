@@ -1,4 +1,4 @@
-const { httpStatus } = require("./utils");
+const { httpStatus } = require('./utils');
 
 module.exports = class NotFoundError extends Error {
   constructor(message = 'Запрашиваемый ресурс не найден') {

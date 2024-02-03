@@ -1,4 +1,4 @@
-const { httpStatus } = require("./utils");
+const { httpStatus } = require('./utils');
 
 module.exports = class ForbiddenError extends Error {
   constructor(message = 'Недостаточно прав') {
