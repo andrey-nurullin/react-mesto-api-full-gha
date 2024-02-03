@@ -26,7 +26,7 @@ userRouter.patch('/me', celebrate({
     about: Joi.string().min(2).max(30),
     avatar: Joi.string().pattern(URL_PATTERN),
     email: Joi.string().email(),
-    _id: Joi.string().alphanum().length(24).required(),
+    _id: Joi.string().alphanum().length(24),
   }),
 }), updateUser);
 
