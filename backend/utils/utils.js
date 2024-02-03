@@ -23,30 +23,6 @@ const generateToken = (payload) => jwt.sign(
   { expiresIn: '7d' },
 );
 
-class NotFoundError extends Error {
-  constructor(message = 'Запрашиваемый ресурс не найден') {
-    super(message);
-    this.name = 'NotFoundError';
-    this.statusCode = httpStatus.NOT_FOUND;
-  }
-}
-
-class AuthError extends Error {
-  constructor(message = 'Ошибка авторизации') {
-    super(message);
-    this.name = 'AuthError';
-    this.statusCode = httpStatus.UNAUTHORIZED;
-  }
-}
-
-class ForbiddenError extends Error {
-  constructor(message = 'Недостаточно прав') {
-    super(message);
-    this.name = 'ForbiddenError';
-    this.statusCode = httpStatus.FORBIDDEN;
-  }
-}
-
 module.exports = {
-  httpStatus, NotFoundError, AuthError, ForbiddenError, generateToken, SECRET_KEY, URL_PATTERN,
+  httpStatus, generateToken, SECRET_KEY, URL_PATTERN,
 };

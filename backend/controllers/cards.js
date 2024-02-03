@@ -1,7 +1,7 @@
 const Card = require('../models/card');
-const {
-  httpStatus, NotFoundError, ForbiddenError,
-} = require('../utils/utils');
+const ForbiddenError = require('../utils/ForbiddenError');
+const NotFoundError = require('../utils/NotFoundError');
+const { httpStatus } = require('../utils/utils');
 
 module.exports.getCards = (req, res, next) => Card.find({})
   .populate('likes').populate('owner')

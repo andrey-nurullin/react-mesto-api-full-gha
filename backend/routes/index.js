@@ -3,8 +3,9 @@ const { celebrate, Joi } = require('celebrate');
 const userRouter = require('./users');
 const cardRouter = require('./cards');
 const { login, createUser } = require('../controllers/users');
-const { NotFoundError, URL_PATTERN } = require('../utils/utils');
+const { URL_PATTERN } = require('../utils/utils');
 const auth = require('../middlewares/auth');
+const NotFoundError = require('../utils/NotFoundError');
 
 // Краш приложения для тестов
 router.get('/crash-test', () => {

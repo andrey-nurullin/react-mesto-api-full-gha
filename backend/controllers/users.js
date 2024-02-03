@@ -1,8 +1,10 @@
 const bcrypt = require('bcrypt');
 const User = require('../models/user');
-const {
-  httpStatus, generateToken, NotFoundError, AuthError,
-} = require('../utils/utils');
+const { httpStatus, generateToken } = require('../utils/utils');
+const NotFoundError = require('../utils/NotFoundError');
+const AuthError = require('../utils/AuthError');
+const { DATA_DUPLICATE_ERROR, ConflictError } = require('../utils/ConflictError');
+const BadRequestError = require('../utils/BadRequestError');
 
 const SALT_ROUNDS = 10;
 
@@ -54,7 +56,13 @@ module.exports.createUser = (req, res, next) => {
       name, about, avatar, email, password: hash,
     })
       .then((user) => res.status(httpStatus.CREATED).send(user)))
-    .catch(next);
+    .catch((err) => {
+      if (err.code === DATA_DUPLICATE_ERROR) {
+        next(new ConflictError('Пользователь уже существует'));
+      } else if (err.name === 'ValidationError' || err.name === 'CastError') {
+        next(new BadRequestError());
+      }
+    });
 };
 
 module.exports.updateUser = (req, res, next) => {
