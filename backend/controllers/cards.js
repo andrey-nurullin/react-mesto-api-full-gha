@@ -1,4 +1,5 @@
 const Card = require('../models/card');
+const BadRequestError = require('../utils/BadRequestError');
 const ForbiddenError = require('../utils/ForbiddenError');
 const NotFoundError = require('../utils/NotFoundError');
 const { httpStatus } = require('../utils/utils');
@@ -14,7 +15,13 @@ module.exports.createCard = (req, res, next) => {
   Card.create({ name, link, owner: req.user._id })
     .then((newCard) => newCard.populate('owner')
       .then((populatedCard) => res.status(httpStatus.CREATED).send(populatedCard)))
-    .catch(next);
+    .catch((err) => {
+      if (err.name === 'ValidationError' || err.name === 'CastError') {
+        next(new BadRequestError());
+      } else {
+        next(err);
+      }
+    });
 };
 
 module.exports.deleteCard = (req, res, next) => {

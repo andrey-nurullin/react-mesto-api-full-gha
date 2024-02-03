@@ -61,6 +61,8 @@ module.exports.createUser = (req, res, next) => {
         next(new ConflictError('Пользователь уже существует'));
       } else if (err.name === 'ValidationError' || err.name === 'CastError') {
         next(new BadRequestError());
+      } else {
+        next(err);
       }
     });
 };
@@ -69,5 +71,11 @@ module.exports.updateUser = (req, res, next) => {
   User.findOneAndUpdate({ _id: req.user._id }, req.body, { new: true, runValidators: true })
     .orFail(() => new NotFoundError())
     .then((user) => res.send(user))
-    .catch(next);
+    .catch((err) => {
+      if (err.name === 'ValidationError' || err.name === 'CastError') {
+        next(new BadRequestError());
+      } else {
+        next(err);
+      }
+    });
 };
