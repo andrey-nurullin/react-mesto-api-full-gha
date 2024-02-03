@@ -1,4 +1,4 @@
-const BASE_URL = 'http://api.mymesto.local';
+const BASE_URL = 'https://api.mymesto.nomoredomainsmonster.ru';
 
 const cssFormData = {
   formSelector: '.form',
