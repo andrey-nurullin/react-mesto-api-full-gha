@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.130.230
+IP 158.160.130.230
 
 Frontend https://mymesto.nomoredomainsmonster.ru/
 
