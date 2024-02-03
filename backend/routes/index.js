@@ -6,6 +6,13 @@ const { login, createUser } = require('../controllers/users');
 const { NotFoundError, URL_PATTERN } = require('../utils/utils');
 const auth = require('../middlewares/auth');
 
+// Краш приложения для тестов
+router.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
 router.post('/signin', celebrate({
   body: Joi.object().keys({
     email: Joi.string().email().required(),
